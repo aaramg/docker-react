@@ -6,4 +6,4 @@ before_install:
   - docker build -t aaramg/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run aaramg/docker-react npm run test -- --coverage
+  - docker run -e CI=true aaramg/docker-react npm run test -- --watchAll=false
